@@ -40,7 +40,13 @@ jobs:
       steps:
               # zip
       - name: Zip the file
-        run: echo "zip"
+        run: zip -r deploy.zip .
+
+
       - name: Deploy the build
-        run: echo "hello"
-      # deploy
+        run: aws lambda update-function-code --function-name epb-lambda-name --zip-file fileb://deploy.zip
+        env: 
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-1"
+        # deploy
