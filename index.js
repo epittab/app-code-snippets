@@ -1,4 +1,4 @@
-import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
 
 let client = null;
 
@@ -10,9 +10,9 @@ export const getClient = () => {
 
 const pk = (value = "") => `USER#${value}`;
 
-const sk = (value = "") => `USER#${value}`;
+const sk = (value = "") => `USER#${value}`; 
 
-export const createUser = async (user = {}) => {
+const createUser = async (user = {}) => {
     let client = getClient();
 
     let data = {
@@ -32,14 +32,8 @@ export const createUser = async (user = {}) => {
         Item: data
     };
 
-    client.putItem(params, (e, d) => {
-        if (e) {
-            console.error(e);
-        } else {
-            console.log("This was returned from ddb");
-            console.log(d);
-        }
-    })
+    await client.send(new PutItemCommand(params))
+
     console.log("finished.")
 }
 
