@@ -24,6 +24,8 @@ export const createUser = async (user = {}) => {
     };
 
     console.log("calling ddb...")
+    console.log(data)
+
 
     const params = {
         TableName: "app-db",
@@ -38,7 +40,7 @@ export const createUser = async (user = {}) => {
             console.log(d);
         }
     })
-
+    console.log("finished.")
 }
 
 
