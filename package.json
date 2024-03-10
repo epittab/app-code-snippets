@@ -1,6 +1,7 @@
 {
   "name": "app-code-snippets",
   "version": "1.0.0",
+  "type": "module",
   "description": "creating simple application code examples",
   "main": "index.js",
   "scripts": {
@@ -10,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.529.1",
+    "@aws-sdk/lib-dynamodb": "^3.529.1"
   }
 }
