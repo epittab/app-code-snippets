@@ -1,4 +1,4 @@
-import { createUser } from "./ddb/user";
+import { createUser } from "./user";
 
 exports.handler = async (event, context) => {
     console.log("Starting invocation");
