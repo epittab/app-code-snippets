@@ -23,6 +23,8 @@ export const createUser = async (user = {}) => {
         "favoriteTeam": {"S": user.team},
     };
 
+    console.log("calling ddb...")
+
     const params = {
         TableName: "app-db",
         Item: data
