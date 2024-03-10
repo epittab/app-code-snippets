@@ -40,7 +40,7 @@ export const createUser = async (user = {}) => {
 }
 
 
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
   console.log("Starting invocation");
 
   if (event["action"] === "create") {
