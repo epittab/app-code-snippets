@@ -28,7 +28,7 @@ export const createUser = async (user = {}) => {
         Item: data
     };
 
-    client.putItems(params, (e, d) => {
+    client.putItem(params, (e, d) => {
         if (e) {
             console.error(e);
         } else {
