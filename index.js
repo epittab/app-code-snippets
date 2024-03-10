@@ -1,5 +1,14 @@
+import { createUser } from "./ddb/user";
+
 exports.handler = async (event, context) => {
-    console.log("EVENT: \n" + JSON.stringify(event, null, 2));
-    console.log("Nice to see a dev/logging deployemnt!");
+    console.log("Starting invocation");
+
+    if (event["action"] === "create") {
+      console.log("Creating user");
+      let user = event["user"]
+      createUser(user);
+    }
+    
+
     return context.logStreamName;
   };
