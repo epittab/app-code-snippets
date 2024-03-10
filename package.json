@@ -1,6 +1,7 @@
 {
   "name": "app-code-snippets",
   "version": "1.0.0",
+  "type": "module",
   "description": "creating simple application code examples",
   "main": "index.js",
   "scripts": {
